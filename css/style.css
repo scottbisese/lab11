@@ -9,11 +9,33 @@ h1#heading {
     width: 500px;
     border:7px groove pink;
     margin:20px;
-    fill:red;
+    /* fill:red; */
+    background-image: url('https://images.pexels.com/photos/2664149/pexels-photo-2664149.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
 }
 #pics {
     float:center;
+    margin: 1000px, 1000px, 1000px, 1000px;
+    box-sizing: border-box;
 }
 body {
-    background: linear-gradient(red, yellow, blue);
+    background-image: url('https://images.pexels.com/photos/1253529/pexels-photo-1253529.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    background-size: 515px;
+    background-repeat: repeat;
+}
+
+.floatSection {
+    float: left;
+    margin-top: 200px;
+}
+
+.wrapper {
+    margin:auto;
+    width: 50%;
+}
+
+ul {
+    color:hotpink;
+    background-color: rgba(24,25,52,22);
+    font-family: helvetica, 'Arial Narrow Bold', sans-serif;
+    font-size:30px;
 }
