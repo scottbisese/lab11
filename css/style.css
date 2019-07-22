@@ -1,0 +1,19 @@
+h1#heading {
+    text-align:center;
+    background:red;
+    color:white;
+}
+#sideBar {
+    font:helvetica;
+    height: 800px;
+    width: 500px;
+    border:7px groove pink;
+    margin:20px;
+    fill:red;
+}
+#pics {
+    float:center;
+}
+body {
+    background: linear-gradient(red, yellow, blue);
+}
