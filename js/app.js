@@ -63,6 +63,11 @@ function render() {
         var img = document.createElement('img');  //create an img tag in html
         img.setAttribute('src',allProducts[randomProducts[i]].imageUrl);  //sets the source of each one
         img.setAttribute('data-name', allProducts[randomProducts[i]].name); //sets a name for each
+        img.setAttribute('width', '250'); //sets a name for each
+        img.setAttribute('height', '250'); //sets a name for each
+
+
+
         img.addEventListener('click', handleVote); // adds event listener to make a click count as a vote/view
         productsSection.appendChild(img);       //adds image variable to the productsSection aka pics in the html
     };
