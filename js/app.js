@@ -109,7 +109,7 @@ if(totalClicks === 25) {                                //if statement, if the t
 //a chart...      duh.
         var ctx = document.getElementById('myChart');
         var myChart = new Chart(ctx, {
-        type: 'polarArea',
+        type: 'bar',
         data: {
             labels: productNames,
             datasets: [{
@@ -155,11 +155,27 @@ if(totalClicks === 25) {                                //if statement, if the t
                 borderWidth: 1
             }]
         },
-        options: { 
+        options: {
+            responsive: true,
+            legend: {
+                position: 'right',
+                labels: {
+                    fontSize: 40,
+                }  
+            },
             scales: {
                 yAxes: [{
+                    scaleLabel: {
+                        fontSize: 40,
+                    },
                     ticks: {
-                        beginAtZero: true
+                        fontSize: 40,
+                        beginAtZero: false
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        fontSize: 40,
                     }
                 }]
             }

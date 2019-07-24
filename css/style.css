@@ -124,3 +124,9 @@ ul {
 audio { 
     display:none;
  }
+
+ #chartContainer {
+   margin: auto;
+   width: 50vw;
+   height: 50vh;
+ }
