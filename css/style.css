@@ -39,3 +39,9 @@ ul {
     font-family: helvetica, 'Arial Narrow Bold', sans-serif;
     font-size:30px;
 }
+
+#myChart {
+    background-color: rgba(115,115,115,200);
+    height: 150;
+    width: 500;
+}

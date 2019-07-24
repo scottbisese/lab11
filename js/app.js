@@ -74,39 +74,97 @@ function render() {
 };
 
 //now we need to make that handleVote function we just used in the event listener
-    function handleVote(event) {  //create a new function called handleVote that is an event
-        var productName = event.target.dataset.name;  //the name is given a vote when you click
-        for(var i = 0;i < allProducts.length;i++){   // for loop inside function handleVote to iterate through allProducts
-            if(allProducts[i].name === productName) {  //if then statement for allProducts to
-                allProducts[i].clicks++                 //to increment clicks on object
-                totalClicks++                               //and the total clicks variable is incremented.
-                render();                           //then you call the render function to clear old pics and data
-            }
+function handleVote(event) {  //create a new function called handleVote that is an event
+    var productName = event.target.dataset.name;  //the name is given a vote when you click
+    for(var i = 0;i < allProducts.length;i++){   // for loop inside function handleVote to iterate through allProducts
+        if(allProducts[i].name === productName) {  //if then statement for allProducts to
+            allProducts[i].clicks++                 //to increment clicks on object
+            totalClicks++                               //and the total clicks variable is incremented.
+            render();                           //then you call the render function to clear old pics and data
         }
+    }
+
+
+// then we want to stop when the total clicks is 25 and remove the click function
+if(totalClicks === 25) {                                //if statement, if the total clicks reached 25 clicks then..
+    var imgs = document.getElementsByTagName('img');  //create a variable called images that grabs the image tags in the DOM
+    for(var i = 0;i<imgs.length;i++){              //and runs a for loop through it to 
+        imgs[i].removeEventListener('click', handleVote);  //remove the event listener to stop game
+    }
+    displayResults(); // call a function to display results, which we make below here
+}
+console.table(allProducts);  // test and check sections
+console.log('total clicks', totalClicks);
+}
+function displayResults(){          //creates function displayResults to
+    var results = document.getElementById('sideBar');  // create variable results that finds a results id
+    var ul = document.createElement('ul');            // and creates an unordered list 
+    for(var i = 0; i < allProducts.length; i++) {    // and a for loop to iterate through the allProducts
+        var product = allProducts[i];               // and store each object as product variable
+        var li = document.createElement('li');    // and create a list 
+        li.textContent = product.name + ' has ' + product.clicks + ' votes.'; // with a script that has the clicks written as votes
+        ul.appendChild(li); //and finally appends this list element to the unordered list.
+    }
+    results.appendChild(ul);  
+}
+
+var clicksArray = [];
+for (var i = 0; i < allProducts.length; i++) {
+    clicksArray.push(allProducts[i].clicks);
+    console.log(allProducts[i].clicks);
+}
+
+
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: productNames,
+        datasets: [{
+            label: '# of Votes',
+            data: clicksArray,
+            backgroundColor: [
+                '#eeeeee',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 69)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+
+
+
+
+
+
     
 
-    // then we want to stop when the total clicks is 25 and remove the click function
-    if(totalClicks === 25) {                                //if statement, if the total clicks reached 25 clicks then..
-        var imgs = document.getElementsByTagName('img');  //create a variable called images that grabs the image tags in the DOM
-        for(var i = 0;i<imgs.length;i++){              //and runs a for loop through it to 
-            imgs[i].removeEventListener('click', handleVote);  //remove the event listener to stop game
-        }
-        displayResults(); // call a function to display results, which we make below here
-    }
-    console.table(allProducts);  // test and check sections
-    console.log('total clicks', totalClicks);
-    }
-    function displayResults(){          //creates function displayResults to
-        var results = document.getElementById('sideBar');  // create variable results that finds a results id
-        var ul = document.createElement('ul');            // and creates an unordered list 
-        for(var i = 0; i < allProducts.length; i++) {    // and a for loop to iterate through the allProducts
-            var product = allProducts[i];               // and store each object as product variable
-            var li = document.createElement('li');    // and create a list 
-            li.textContent = product.name + ' has ' + product.clicks + ' votes.'; // with a script that has the clicks written as votes
-            ul.appendChild(li); //and finally appends this list element to the unordered list.
-        }
-        results.appendChild(ul);  
-    }
+
 
     createProducts();  //then we create the objects
     render();         // and return to sender render a blender bender.
+
+    console.log(allProducts.length);
