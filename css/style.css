@@ -9,7 +9,6 @@ h1#heading {
     width: 500px;
     border:7px groove pink;
     margin:20px;
-    /* fill:red; */
     background-image: url('https://images.pexels.com/photos/2664149/pexels-photo-2664149.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
 }
 #pics {
@@ -17,11 +16,7 @@ h1#heading {
     margin: 1000px, 1000px, 1000px, 1000px;
     box-sizing: border-box;
 }
-body {
-    background-image: url('https://images.pexels.com/photos/1253529/pexels-photo-1253529.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
-    background-size: 515px;
-    background-repeat: repeat;
-}
+
 
 .floatSection {
     float: left;
@@ -39,3 +34,99 @@ ul {
     font-family: helvetica, 'Arial Narrow Bold', sans-serif;
     font-size:30px;
 }
+
+#dadDontKickMeOutIfIBuyThisThirtyThousandDollarChair {
+    color:white;
+    font-size: 20px;
+    position: relative;
+    width: 1200px;
+    height: 1px;
+    background-color: rgba(172, 38, 199, 0.0);
+    left: 600px;
+    top: 800px;
+    
+
+}
+
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  #dad{
+      background-image: url("https://previews.123rf.com/images/anima21/anima211510/anima21151000214/46799043-angry-man-crashing-laptop-with-a-hammer.jpg");
+}
+audio { 
+    display:none;
+ }
+
+ #chartContainer {
+   margin: auto;
+   width: 50vw;
+   height: 50vh;
+ }
